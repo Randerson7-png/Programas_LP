@@ -1,3 +1,5 @@
+package Exemplo2;
+
 public class Cliente {
     private String nome;
     private CarrinhoDeCompras carrinho;

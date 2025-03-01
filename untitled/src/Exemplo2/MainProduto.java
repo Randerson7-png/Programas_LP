@@ -1,3 +1,5 @@
+package Exemplo2;
+
 public class MainProduto {
     public static void main(String[] args) {
         Cliente cliente = new Cliente("Maria");
@@ -22,6 +24,7 @@ public class MainProduto {
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
+
 
     }
 }
