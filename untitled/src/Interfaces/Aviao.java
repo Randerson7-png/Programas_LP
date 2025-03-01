@@ -9,9 +9,17 @@ public class Aviao implements Voador{
         this.ano = ano;
     }
 
+    public String getModelo(){
+        return modelo;
+    }
+
+    public int getAno(){
+        return ano;
+    }
+
     @Override
     public boolean pousar() {
-        System.out.println("Pousa drone");
+        System.out.println("Pousa avião");
         return true;
     }
 
