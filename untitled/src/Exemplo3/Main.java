@@ -38,41 +38,41 @@ public class Main {
            Nota ipN2Charile = new Nota(9.5, ip);
            Nota ipN3Charile = new Nota(10, ip);
 
+           Nota[] notasCharlie = {ipN1Charile, ipN2Charile, ipN3Charile};
+           charlie.adicionarNotas(notasCharlie);
+
        } catch (Exception e){
            System.out.println(e.getMessage());
 
        }
 
-        Nota[] notasCharlie = {ipN1Charile, ipN2Charile, ipN3Charile};
-
        try{
-           charlie.adicionarNotas(notasCharlie);
-       } catch (Exception e ){
+           System.out.println("Media em ip de joão: " + joao.calcularMediaDisciplina(ip));
+           System.out.println("Media em ip de carla: " + carla.calcularMediaDisciplina(ip));
+           System.out.println("Media em ip de charlie: " + charlie.calcularMediaDisciplina(ip));
 
+       } catch (Exception e) {
            System.out.println(e.getMessage());
-
        }
-
-        System.out.println("Media em ip de joão: " + joao.calcularMediaDisciplina(ip));
-        System.out.println("Media em ip de carla: " + carla.calcularMediaDisciplina(ip));
-        System.out.println("Media em ip de charlie: " + charlie.calcularMediaDisciplina(ip));
 
         try{
             charlie.adicionarNota(10, null);
+            charlie.adicionarNota(10, null); //deve lançar exceção pois a disciplina é nula
+            charlie.adicionarNota(null); //deve lançar exceção pois a nota é null
+
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
 
-
-        charlie.adicionarNota(10, null); //deve lançar exceção pois a disciplina é nula
-
-        charlie.adicionarNota(null); //deve lançar exceção pois a nota é null
-
         Nota[] notasVazias = {};
 
-        charlie.adicionarNotas(notasVazias); //deve lançar exeção pois a lista é vazia
+        try{
+            charlie.adicionarNotas(notasVazias); //deve lançar exeção pois a lista é vazia
+            charlie.adicionarNotas(new ArrayList<Nota>()); //deve lançar exceção pois a lista é vazia
 
-        charlie.adicionarNotas(new ArrayList<Nota>()); //deve lançar exceção pois a lista é vazia
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         Disciplina algebraLinear = new Disciplina("Algebra", ""); //deve lançar uma exceção pois o código é inválido
 

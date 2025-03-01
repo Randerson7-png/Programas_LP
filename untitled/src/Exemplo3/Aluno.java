@@ -33,17 +33,27 @@ public class Aluno {
         this.notas.add(nota);
     }
 
-    public void adicionarNotas(List<Nota> notas){
+    public void adicionarNotas(List<Nota> notas) throws Exception{
+        if(notas.isEmpty()){
+            throw new Exception("A lista está vazia!");
+        }
         this.notas.addAll(notas);
     }
 
     public void adicionarNotas(Nota[] notas)throws Exception{
+        if(notas.length == 0){
+            throw new Exception("O array está vazio!");
+        }
         for(Nota nota : notas){
             this.adicionarNota(nota);
         }
     }
 
-    public double calcularMediaDisciplina(Disciplina disciplina){
+    public double calcularMediaDisciplina(Disciplina disciplina) throws Exception{
+        if(disciplina == null){
+            throw new Exception("A disciplina se encontra nula!");
+
+        }
         double valor_total = 0;
         double quantidade = 0;
         for(Nota nota: notas){
