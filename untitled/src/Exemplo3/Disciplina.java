@@ -9,7 +9,7 @@ public class Disciplina {
     private String cod;
     private List<Aluno> alunos = new ArrayList<>();
 
-    public Disciplina(String nome, String cod) throws Exception {
+    public Disciplina(String nome, String cod) {
 
         this.nome = nome;
         this.cod = cod;

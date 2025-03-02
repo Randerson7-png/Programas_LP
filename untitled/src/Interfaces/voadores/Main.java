@@ -2,35 +2,32 @@ package Interfaces.voadores;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
 
         List<Voador> voadores = new ArrayList<>();
 
-        Voador voador1 = new Aviao("Grande", 2025);
-        Voador voador2 = new GalinhaVoadora();
-        Voador voador3 = new Drone("Pequeno");
-        Voador voador4 = new Aviao("XR8", 2006);
-        Voador voador5 = new GalinhaVoadora();
-        Voador voador6 = new Aviao("Medio", 2013);
-        Voador voador7 = new GalinhaVoadora();
-        Voador voador8 = new Drone("Largo");
-        Voador voador9 = new Aviao("Acelerado", 2010);
-        Voador voador10 = new GalinhaVoadora();
+        Random random = new Random();
+        int opcao = random.nextInt(3);
 
-        voadores.add(voador1);
-        voadores.add(voador2);
-        voadores.add(voador3);
-        voadores.add(voador4);
-        voadores.add(voador5);
-        voadores.add(voador6);
-        voadores.add(voador7);
-        voadores.add(voador8);
-        voadores.add(voador9);
-        voadores.add(voador10);
+        Voador voador; // chamada polimorfica
 
+        for(int i = 0; i < 10; i++){
 
+            if(opcao == 0){
+                voador = new GalinhaVoadora(); // outra
 
+            }
+            else if (opcao == 1) {
+                voador = new Aviao("XLR8", 2019); // outra
+            }
+            else{
+                voador =  new Drone("G300"); // outra
+            }
+            voadores.add(voador);
+
+        }
     }
 }
