@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.voadores;
 
 public interface Voador {
     public double voar();

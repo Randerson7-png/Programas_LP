@@ -74,7 +74,12 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        Disciplina algebraLinear = new Disciplina("Algebra", ""); //deve lançar uma exceção pois o código é inválido
+        try{
+            Disciplina algebraLinear = new Disciplina("Algebra", ""); //deve lançar uma exceção pois o código é inválido
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         //PLUS: Como você faria para armazenar as disciplinas de um curso?
         //      Seria necessário criar uma nova classe?

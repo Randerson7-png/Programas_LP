@@ -9,12 +9,16 @@ public class Disciplina {
     private String cod;
     private List<Aluno> alunos = new ArrayList<>();
 
-    public Disciplina(String nome, String cod) {
+    public Disciplina(String nome, String cod) throws Exception {
+
         this.nome = nome;
         this.cod = cod;
     }
 
-    public void adicionarAluno(Aluno aluno){
+    public void adicionarAluno(Aluno aluno) throws Exception{
+        if(aluno == null){
+            throw new Exception("O aluno não pode ser nulo!");
+        }
         this.alunos.add(aluno);
     }
 

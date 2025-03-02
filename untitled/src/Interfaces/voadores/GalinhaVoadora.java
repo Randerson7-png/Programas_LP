@@ -1,4 +1,4 @@
-package Interfaces;
+package Interfaces.voadores;
 
 public class GalinhaVoadora implements Voador {
     public void comeMilho() {

@@ -1,6 +1,6 @@
-package Interfaces;
+package Interfaces.voadores;
 
-public class Aviao implements Voador{
+public class Aviao implements Voador {
     private String modelo;
     private int ano;
 
