@@ -9,19 +9,26 @@ public class Circulo implements Figuras2D {
     }
 
     @Override
-    public double calculaArea(double raio){
-        double resultado = Math.PI * (raio * raio);
-        return resultado;
+    public double calculaArea(){
+        return Math.PI * (raio * raio);
+
     }
 
     @Override
-    public double calculaPerimetro(double raio){
-        double resultado = 2 * raio * Math.PI;
-        return resultado;
+    public double calculaPerimetro(){
+        return 2 * raio * Math.PI;
     }
 
     @Override
     public String getIdentificacao() {
         return "Circulo";
+    }
+
+    public double getRaio() {
+        return this.raio;
+    }
+
+    public void setRaio(double raio) {
+        this.raio = raio;
     }
 }

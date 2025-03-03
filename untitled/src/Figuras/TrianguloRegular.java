@@ -1,29 +1,25 @@
 package Figuras;
 
-public class Quadrado implements Figuras2D{
+public class TrianguloRegular implements Figuras2D{
     private double lado;
 
-    public Quadrado(double lado) {
+    public TrianguloRegular(double lado) {
         this.lado = lado;
-    }
-
-    public Quadrado(){
-        this(0.0);
     }
 
     @Override
     public double calculaArea() {
-        return lado * lado;
+       return (lado * lado * Math.sqrt(3)) / 4 ;
     }
 
     @Override
     public double calculaPerimetro() {
-        return 4 * lado;
+        return 3 * lado;
     }
 
     @Override
     public String getIdentificacao() {
-        return "Quadrado";
+        return "Triangulo regular";
     }
 
     public double getLado() {
