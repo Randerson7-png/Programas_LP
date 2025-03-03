@@ -33,7 +33,6 @@ public class Main {
             for( Voador v : voadores ){
                 System.out.println(v.toString()); // conferindo se estava dando certo
             }
-
         }
     }
 }

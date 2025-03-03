@@ -22,4 +22,8 @@ public class RepositorioDeFiguras2D {
         return this.figuras.get(posicao);
     }
 
+    public String recuperarTipo(int posicao){
+        return this.figuras.get(posicao).getIdentificacao();
+    }
+
 }

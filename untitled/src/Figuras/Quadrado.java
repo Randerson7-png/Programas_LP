@@ -24,5 +24,4 @@ public class Quadrado implements Figuras2D{
         return "Quadrado";
     }
 
-
 }
