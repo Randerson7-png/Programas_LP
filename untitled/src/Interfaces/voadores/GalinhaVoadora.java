@@ -22,4 +22,9 @@ public class GalinhaVoadora implements Voador {
         return true;
 
     }
+
+    @Override
+    public String toString() {
+        return "GalinhaVoadora";
+    }
 }

@@ -4,6 +4,14 @@ public class Aviao implements Voador {
     private String modelo;
     private int ano;
 
+    @Override
+    public String toString() {
+        return "Aviao{" +
+                "modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                '}';
+    }
+
     public Aviao(String modelo, int ano) {
         this.modelo = modelo;
         this.ano = ano;

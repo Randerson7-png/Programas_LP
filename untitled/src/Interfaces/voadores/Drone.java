@@ -30,4 +30,11 @@ public class Drone implements Voador {
         System.out.println("Pousa drone");
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Drone{" +
+                "tipo='" + tipo + '\'' +
+                '}';
+    }
 }
