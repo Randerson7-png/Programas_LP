@@ -35,4 +35,9 @@ public class Circulo implements Figuras2D {
     public void setRaio(double raio) {
         this.raio = raio;
     }
+
+    @Override
+    public int compareTo(Figuras2D o) {
+        return 0;
+    }
 }

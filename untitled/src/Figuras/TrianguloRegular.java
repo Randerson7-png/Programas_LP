@@ -33,4 +33,9 @@ public class TrianguloRegular implements Figuras2D{
     public void setLado(double lado) {
         this.lado = lado;
     }
+
+    @Override
+    public int compareTo(Figuras2D o) {
+        return Integer.compare(this.calculaArea(), TrianguloRegular.calculaArea());
+    }
 }

@@ -33,4 +33,9 @@ public class Quadrado implements Figuras2D{
     public void setLado(double lado) {
         this.lado = lado;
     }
+
+    @Override
+    public int compareTo(Figuras2D figura) {
+        return Integer.compare(this.calculaArea(), figura.calculaArea());
+    }
 }

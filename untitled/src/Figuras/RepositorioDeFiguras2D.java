@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class RepositorioDeFiguras2D implements Comparable <Figuras2D> {
+public class RepositorioDeFiguras2D {
     private List<Figuras2D> figuras = new ArrayList<>();
 
     public void adicionarFigura(Figuras2D figura){
@@ -47,8 +47,5 @@ public class RepositorioDeFiguras2D implements Comparable <Figuras2D> {
                 '}';
     }
 
-    @Override
-    public int compareTo( Figuras2D o) {
-        return 0;
-    }
+
 }
