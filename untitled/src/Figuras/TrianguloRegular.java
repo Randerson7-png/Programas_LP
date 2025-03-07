@@ -7,6 +7,10 @@ public class TrianguloRegular implements Figuras2D{
         this.lado = lado;
     }
 
+    public TrianguloRegular(){
+        this(0.0);
+    }
+
     @Override
     public double calculaArea() {
        return (lado * lado * Math.sqrt(3)) / 4 ;

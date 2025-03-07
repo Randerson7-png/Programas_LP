@@ -18,7 +18,6 @@ public class Main {
 
             if(opcao == 0){
                 voador = new GalinhaVoadora(); // outra
-
             }
             else if (opcao == 1) {
                 voador = new Aviao("XLR8", 2019); // outra

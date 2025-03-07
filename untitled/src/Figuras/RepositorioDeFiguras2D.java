@@ -2,8 +2,9 @@ package Figuras;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class RepositorioDeFiguras2D {
+public class RepositorioDeFiguras2D implements Comparable <Figuras2D> {
     private List<Figuras2D> figuras = new ArrayList<>();
 
     public void adicionarFigura(Figuras2D figura){
@@ -26,4 +27,28 @@ public class RepositorioDeFiguras2D {
         return this.figuras.get(posicao).getIdentificacao();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        RepositorioDeFiguras2D that = (RepositorioDeFiguras2D) o;
+        return Objects.equals(figuras, that.figuras);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(figuras);
+    }
+
+    @Override
+    public String
+    toString() {
+        return "RepositorioDeFiguras2D{" +
+                "figuras=" + figuras +
+                '}';
+    }
+
+    @Override
+    public int compareTo( Figuras2D o) {
+        return 0;
+    }
 }
