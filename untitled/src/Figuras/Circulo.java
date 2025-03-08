@@ -12,6 +12,14 @@ public class Circulo implements Figuras2D {
         this(0.0);
     }
 
+    public double getRaio() {
+        return this.raio;
+    }
+
+    public void setRaio(double raio) {
+        this.raio = raio;
+    }
+
     @Override
     public double calculaArea(){
         return Math.PI * (raio * raio);
@@ -28,16 +36,8 @@ public class Circulo implements Figuras2D {
         return "Circulo";
     }
 
-    public double getRaio() {
-        return this.raio;
-    }
-
-    public void setRaio(double raio) {
-        this.raio = raio;
-    }
-
     @Override
-    public int compareTo(Figuras2D o) {
-        return 0;
+    public int compareTo(Figuras2D figura) {
+        return Double.compare(this.calculaArea(), figura.calculaArea() );
     }
 }

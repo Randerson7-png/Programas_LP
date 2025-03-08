@@ -11,6 +11,14 @@ public class Quadrado implements Figuras2D{
         this(0.0);
     }
 
+    public double getLado() {
+        return this.lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
+    }
+
     @Override
     public double calculaArea() {
         return lado * lado;
@@ -26,16 +34,8 @@ public class Quadrado implements Figuras2D{
         return "Quadrado";
     }
 
-    public double getLado() {
-        return this.lado;
-    }
-
-    public void setLado(double lado) {
-        this.lado = lado;
-    }
-
     @Override
     public int compareTo(Figuras2D figura) {
-        return Integer.compare(this.calculaArea(), figura.calculaArea());
+        return Double.compare(this.calculaArea(), figura.calculaArea());
     }
 }

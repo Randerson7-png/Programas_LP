@@ -15,12 +15,14 @@ public class RepositorioDeFiguras2D {
         this.figuras.remove(posicao);
     }
 
-    public Figuras2D recuperarArea(int posicao){
-        return this.figuras.get(posicao);
+    public double recuperarArea(int posicao){
+        Figuras2D figuraDesejada = this.figuras.get(posicao);
+        return figuraDesejada.calculaArea();
     }
 
-    public Figuras2D recuperarPerimetro(int posicao){
-        return this.figuras.get(posicao);
+    public double recuperarPerimetro(int posicao){
+        Figuras2D figuraDesejada = this.figuras.get(posicao);
+        return figuraDesejada.calculaPerimetro();
     }
 
     public String recuperarTipo(int posicao){
@@ -46,6 +48,5 @@ public class RepositorioDeFiguras2D {
                 "figuras=" + figuras +
                 '}';
     }
-
 
 }
