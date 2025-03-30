@@ -17,7 +17,7 @@ public class Banho extends ServicoPetshop{
         double preco = 0;
 
         if(getTamanho() == Tamanho.PEQUENO){
-            preco = 50;
+            preco = PrecoBanho.PEQUENO.getValor();
             if(getTamanhoPelo() == TamanhoPelo.CURTO){
                 preco += 0;
             }
@@ -29,7 +29,7 @@ public class Banho extends ServicoPetshop{
             }
         }
         else if (getTamanho() == Tamanho.MEDIO) {
-            preco = 60;
+            preco = PrecoBanho.MEDIO.getValor();
             if(getTamanhoPelo() == TamanhoPelo.CURTO){
                 preco += 0;
             }
@@ -41,7 +41,7 @@ public class Banho extends ServicoPetshop{
             }
         }
         else if (getTamanho() == Tamanho.GRANDE) {
-            preco = 70;
+            preco = PrecoBanho.GRANDE.getValor();
             if(getTamanhoPelo() == TamanhoPelo.CURTO){
                 preco += 0;
             }

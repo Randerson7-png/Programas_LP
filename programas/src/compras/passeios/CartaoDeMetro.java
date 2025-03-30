@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class CartaoDeMetro implements  VendaDeTurismoIF{
     private int getQtdeViagens;
-    private final double VALOR_DE_UMA_VIAGEM = 7.0;
+    private static final double VALOR_DE_UMA_VIAGEM = 7.0;
 
     public CartaoDeMetro(int quantidadeDeViagens) throws Exception {
 

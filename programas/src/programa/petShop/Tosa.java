@@ -10,15 +10,16 @@ public class Tosa extends ServicoPetshop{
     }
 
     public double calculaPreco(){
+
         double preco = 0;
         if(getTamanho() == Tamanho.PEQUENO){
-            preco+= 30;
+            preco += PrecoTosa.PEQUENO.getPreco();
         }
         else if (getTamanho() == Tamanho.MEDIO) {
-            preco += 40;
+            preco += PrecoTosa.MEDIO.getPreco();
         }
         else if (getTamanho() == Tamanho.GRANDE) {
-            preco += 50;
+            preco += PrecoTosa.GRANDE.getPreco();
         }
         return preco;
     }

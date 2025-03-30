@@ -24,13 +24,13 @@ public class Hotel extends ServicoPetshop{
         double preco = 0;
 
         if(getTamanho() == Tamanho.PEQUENO){
-            preco += 12;
+            preco += PrecoHotel.PEQUENO.getPreco();
         }
         else if (getTamanho() == Tamanho.MEDIO) {
-            preco += 18;
+            preco += PrecoHotel.MEDIO.getPreco();
         }
         else if (getTamanho() == Tamanho.GRANDE) {
-            preco += 25;
+            preco += PrecoHotel.GRANDE.getPreco();
         }
 
         return preco * getQuantHrs();
