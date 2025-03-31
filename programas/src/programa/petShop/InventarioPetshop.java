@@ -44,4 +44,10 @@ public class InventarioPetshop {
 
         return extrato;
     }
+
+    public int getTamanhoInventario(){
+        return servicos.size();
+    }
+
+
 }
