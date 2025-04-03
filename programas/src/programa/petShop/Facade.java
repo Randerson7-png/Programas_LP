@@ -7,19 +7,22 @@ public class Facade {
         this.inventario = inventario;
     }
 
-    public void criaBanho(int codigo, Tamanho tamanho, TamanhoPelo tamanhoPelo){
-        ServicoPetshop banho = new Banho(codigo,tamanho,tamanhoPelo);
+    public Banho criaBanho(int codigo, Tamanho tamanho, TamanhoPelo tamanhoPelo){
+        Banho banho = new Banho(codigo,tamanho,tamanhoPelo);
         inventario.adicionaServiso(banho);
+        return banho;
     }
 
-    public void hospedaNoHotelzinho(int codigo, Tamanho tamanho, int quantHoras){
-        ServicoPetshop hotel = new Hotel(codigo, tamanho, quantHoras);
+    public Hotel hospedaNoHotelzinho(int codigo, Tamanho tamanho, int quantHoras){
+        Hotel hotel = new Hotel(codigo, tamanho, quantHoras);
         inventario.adicionaServiso(hotel);
+        return hotel;
     }
 
-    public void criaTosa(int codigo, Tamanho tamanho){
-        ServicoPetshop tosa = new Tosa(codigo, tamanho);
+    public Tosa criaTosa(int codigo, Tamanho tamanho){
+        Tosa tosa = new Tosa(codigo, tamanho);
         inventario.adicionaServiso(tosa);
+        return tosa;
     }
 
     public double calculaPreco(InventarioPetshop inventario){
