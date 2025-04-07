@@ -6,6 +6,7 @@ public class Tosa extends ServicoPetshop{
 
     public Tosa(int codigo, Tamanho tamanho) {
         super(codigo, tamanho);
+        LocalDate.now();
 
     }
 

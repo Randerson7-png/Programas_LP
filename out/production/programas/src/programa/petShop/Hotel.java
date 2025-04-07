@@ -9,6 +9,7 @@ public class Hotel extends ServicoPetshop{
     public Hotel(int codigo, Tamanho tamanho, int quantHrs) {
         super(codigo, tamanho);
         this.quantHrs = quantHrs;
+        LocalDate.now();
 
     }
 
