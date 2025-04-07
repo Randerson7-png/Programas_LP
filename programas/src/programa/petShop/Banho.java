@@ -5,13 +5,15 @@ import java.util.Objects;
 
 public class Banho extends ServicoPetshop{
 
-    private TamanhoPelo tamanhoPelo;
+    private final TamanhoPelo tamanhoPelo;
+
 
     public Banho(int codigo, Tamanho tamanho, TamanhoPelo tamanhoPelo) {
         super(codigo, tamanho);
         this.tamanhoPelo = tamanhoPelo;
-
+        LocalDate.now();
     }
+
 
     public double calculaPreco(){
         double preco = 0;
@@ -61,10 +63,6 @@ public class Banho extends ServicoPetshop{
 
     public TamanhoPelo getTamanhoPelo() {
         return tamanhoPelo;
-    }
-
-    public void setTamanhoPelo(TamanhoPelo tamanhoPelo) {
-        this.tamanhoPelo = tamanhoPelo;
     }
 
     @Override

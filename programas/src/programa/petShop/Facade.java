@@ -41,4 +41,16 @@ public class Facade {
         return inventario.getTamanhoInventario();
     }
 
+    public String inventarioListarServicos(){
+        return inventario.listaServicos();
+    }
+
+    public String inventarioExtrato(){
+        return inventario.getExtrato();
+    }
+
+    public void adicionaNoInventario(ServicoPetshop servico){
+        inventario.adicionaServiso(servico);
+    }
+
 }

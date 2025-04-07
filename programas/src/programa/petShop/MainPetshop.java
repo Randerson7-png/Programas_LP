@@ -23,6 +23,7 @@ public class MainPetshop {
                             TamanhoPelo tamPelo = verificaTamPelo(sc);
                             int cod = getCod(inventario);
                             ServicoPetshop banho = facade.criaBanho(cod, Tamanho.PEQUENO, tamPelo);
+                            //facade.adicionaNoInventario(banho);
                             inventario.adicionaServiso(banho);
                             System.out.printf("Valor do serviço: R$ %.2f%n", banho.calculaPreco());
                             System.out.println(banho.descricao());
@@ -32,14 +33,17 @@ public class MainPetshop {
                             TamanhoPelo tamPelo = verificaTamPelo(sc);
                             int cod = getCod(inventario);
                             ServicoPetshop banho = facade.criaBanho(cod, Tamanho.MEDIO, tamPelo);
+                            //facade.adicionaNoInventario(banho);
                             inventario.adicionaServiso(banho);
-                            System.out.printf("valor do serviço: R$ %.2f%n", banho.calculaPreco());
+                            System.out.printf("Valor do serviço: R$ %.2f%n", banho.calculaPreco());
                             System.out.println(banho.descricao());
 
                         }
                         case "3" -> {
                             TamanhoPelo tamPelo = verificaTamPelo(sc);
-                            ServicoPetshop banho = facade.criaBanho(getCod(inventario), Tamanho.GRANDE, tamPelo);
+                            int cod = getCod(inventario);
+                            ServicoPetshop banho = facade.criaBanho(cod, Tamanho.GRANDE, tamPelo);
+                            //facade.adicionaNoInventario(banho);
                             inventario.adicionaServiso(banho);
                             System.out.printf("Valor do serviço: R$ %.2f%n", banho.calculaPreco());
                             System.out.println(banho.descricao());
@@ -53,35 +57,17 @@ public class MainPetshop {
                     switch (escolhatamanho) {
                         case "1" -> {
                             Tamanho tamanho = Tamanho.PEQUENO;
-                            System.out.println("Informe a quantidade de horas que o hospede vai ficar: ");
-                            int opcaoQuantHoras = sc.nextInt();
-                            int cod = getCod(inventario);
-                            ServicoPetshop hotelzinho = facade.hospedaNoHotelzinho(cod, tamanho, opcaoQuantHoras);
-                            System.out.printf("Valor do serviço: R$ %.2f%n", hotelzinho.calculaPreco());
-                            System.out.println(hotelzinho.descricao());
-                            inventario.adicionaServiso(hotelzinho);
+                            servicoHotel(sc, inventario, facade, tamanho);
 
                         }
                         case "2" -> {
                             Tamanho tamanho = Tamanho.MEDIO;
-                            System.out.println("Informe a quantidade de horas que o hospede vai ficar: ");
-                            int opcaoQuantHoras = sc.nextInt();
-                            int cod = getCod(inventario);
-                            ServicoPetshop hotelzinho = facade.hospedaNoHotelzinho(cod, tamanho, opcaoQuantHoras);
-                            System.out.printf("Valor do serviço: R$ %.2f%n", hotelzinho.calculaPreco());
-                            System.out.println(hotelzinho.descricao());
-                            inventario.adicionaServiso(hotelzinho);
+                            servicoHotel(sc, inventario, facade, tamanho);
 
                         }
                         case "3" -> {
                             Tamanho tamanho = Tamanho.GRANDE;
-                            System.out.println("Informe a quantidade de horas que o hospede vai ficar: ");
-                            int opcaoQuantHoras = sc.nextInt();
-                            int cod = getCod(inventario);
-                            ServicoPetshop hotelzinho = facade.hospedaNoHotelzinho(cod, tamanho, opcaoQuantHoras);
-                            System.out.printf("Valor do serviço: R$ %.2f%n", hotelzinho.calculaPreco());
-                            System.out.println(hotelzinho.descricao());
-                            inventario.adicionaServiso(hotelzinho);
+                            servicoHotel(sc, inventario, facade, tamanho);
                         }
                         default -> System.out.println("Tamanho indisponível!");
                     }
@@ -97,6 +83,7 @@ public class MainPetshop {
                             Tamanho tam = Tamanho.PEQUENO;
                             int cod = getCod(inventario);
                             ServicoPetshop tosa = facade.criaTosa(cod, tam);
+                           // facade.adicionaNoInventario(tosa);
                             inventario.adicionaServiso(tosa);
                             System.out.printf("Valor do serviço: R$ %.2f%n", tosa.calculaPreco());
                             System.out.println(tosa.descricao());
@@ -106,6 +93,7 @@ public class MainPetshop {
                             Tamanho tam = Tamanho.MEDIO;
                             int cod = getCod(inventario);
                             ServicoPetshop tosa = facade.criaTosa(cod, tam);
+                           // facade.adicionaNoInventario(tosa);
                             inventario.adicionaServiso(tosa);
                             System.out.printf("Valor do serviço: R$ %.2f%n", tosa.calculaPreco());
                             System.out.println(tosa.descricao());
@@ -114,6 +102,7 @@ public class MainPetshop {
                             Tamanho tam = Tamanho.GRANDE;
                             int cod = getCod(inventario);
                             ServicoPetshop tosa = facade.criaTosa(cod, tam);
+                            //facade.adicionaNoInventario(tosa);
                             inventario.adicionaServiso(tosa);
                             System.out.printf("Valor do serviço: R$ %.2f%n", tosa.calculaPreco());
                             System.out.println(tosa.descricao());
@@ -124,11 +113,23 @@ public class MainPetshop {
                 case "4" -> {
                     System.out.println("Fechando Loja...");
                     System.out.println(inventario.listaServicos() + "\n" + inventario.getExtrato());
+                    System.out.println();
                     continuar = false;
                 }
             }
         }
         sc.close();
+    }
+
+    private static void servicoHotel(Scanner sc, InventarioPetshop inventario, Facade facade, Tamanho tamanho) {
+        System.out.println("Informe a quantidade de horas que o hospede vai ficar: ");
+        int opcaoQuantHoras = sc.nextInt();
+        int cod = getCod(inventario);
+        ServicoPetshop hotelzinho = facade.hospedaNoHotelzinho(cod, tamanho, opcaoQuantHoras);
+        System.out.printf("Valor do serviço: R$ %.2f%n", hotelzinho.calculaPreco());
+        System.out.println(hotelzinho.descricao());
+        //facade.adicionaNoInventario(hotelzinho);
+        inventario.adicionaServiso(hotelzinho);
     }
 
     private static int getCod(InventarioPetshop inventario) {
